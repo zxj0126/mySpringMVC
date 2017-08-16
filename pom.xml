@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>mySpring</groupId>
+  <artifactId>springMVC</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+	
+  <!-- jar包版本信息 -->
+  <properties>  
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+    <spring.version>4.3.9.RELEASE</spring.version>
+    <servlet>3.1.0</servlet>
+    <com.fasterxml.jackson>2.8.8</com.fasterxml.jackson>
+    <swagger2>2.7.0</swagger2>
+  </properties>  
+  
+  <!-- jar包 -->
+  <dependencies>
+  	    <!-- spring begin -->  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-webmvc</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-jdbc</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-context</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-aop</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-core</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-test</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		<!-- spring end --> 
+		
+		<!-- servlet -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>${servlet}</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		<!-- log4j -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>1.7.25</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+		
+		<!-- jackson begin-->
+		<dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${com.fasterxml.jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${com.fasterxml.jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${com.fasterxml.jackson}</version>
+        </dependency>
+        <!-- jackson end-->
+        
+        <!-- swagger begin -->
+        <dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>${swagger2}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>${swagger2}</version>
+		</dependency>			
+		<!-- swagger end -->
+  </dependencies>
+  
+  <!-- build -->
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+		<artifactId>maven-war-plugin</artifactId>
+		<configuration>
+			<version>3.1</version>
+		</configuration>
+	  </plugin>
+    </plugins>
+  </build>
+</project>
